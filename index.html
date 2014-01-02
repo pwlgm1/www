@@ -38,8 +38,7 @@ $(function(){
 	$("#menuView").click(function(){
 		$.ajax("https://apis.daum.net/cafe/recent_articles/internet-media.json",{type:"GET"}).done(function(a){
 			$("#content").html("");
-			var m=a.article[i];
-			for(i=0;i<20;i++){ $("#content").append(m.userName.value+" - "+m.name+"<br />"); }
+			for(i=0;i<20;i++){ $("#content").append(a.article[i].userName.value+" - "+a.article[i].name+"<br />"); }
 		});
 	});
 })
