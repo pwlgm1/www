@@ -19,10 +19,10 @@ $(function(){
 	});
 	$("#menuCamera").click(function(){
 		navigator.camera.getPicture(function(imageData){
-			$("#content").append('<img style="width:240px;height:240px;margin:0 auto;border:1px solid black;" src="data:image/jpeg;base64,' + imageData + '" />');
+			$("#content").append('<img style="width:120px;height:120px;margin:0 auto;border:1px solid black;" src="data:image/jpeg;base64,' + imageData + '" />');
 		},function(){
 			return false;
-		},{quality: 50,destinationType: Camera.DestinationType.DATA_URL,correctOrientation: true,targetWidth:240,targetHeight:240}
+		},{quality: 50,destinationType: Camera.DestinationType.DATA_URL,correctOrientation: true,targetWidth:720,targetHeight:720}
 		);
 	});
 	$("#menuVideo").click(function(){
