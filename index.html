@@ -35,7 +35,7 @@ $(function(){
 	$("#menuView").click(function(){
 		$.ajax("https://apis.daum.net/cafe/recent_articles/internet-media.json",{type:"GET"}).done(function(a){
 			$("#content").html("");
-			for(i=0;i<5;i++){ $("#content").append(a.article[i].userName.value+" - "+a.article[i].name); }
+			for(i=0;i<5;i++){ $("#content").append(a.article[i].userName.value+" - "+a.article[i].name+"<br />"); }
 		});
 	});
 	document.addEventListener("menuButton",function(){
