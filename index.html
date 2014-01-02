@@ -32,6 +32,12 @@ $(function(){
                             'Device UUID: '     + device.uuid     + '<br />' +
                             'Device Version: '  + device.version  + '<br />');
 	});
+	$("#menuView").click(function(){
+		$.ajax("https://apis.daum.net/cafe/recent_articles/internet-media.json",{type:"GET"}).done(function(a){
+			$("#content").html("");
+			for(i=0;i<5;i++){ $("#content").append(a.article[i].userName.value+" - "+a.article[i].name); }
+		});
+	});
 	document.addEventListener("menuButton",function(){
 		$("#footerMenu").fadeToggle(200);
 	});
@@ -49,7 +55,7 @@ $(function(){
 				<li><a href="#" data-icon="home" data-iconpos="top" id="menuHome">홈</a></li>
 				<li><a href="#" data-icon="camera" data-iconpos="top" id="menuCamera">등록</a></li>
 				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo">기기정보</a></li>
-				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo2">기기정보</a></li>
+				<li><a href="#" data-icon="alert" data-iconpos="top" id="menuView">API 엑세스</a></li>
 			</ul>
 		</div>
 	</div>
