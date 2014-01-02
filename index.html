@@ -32,9 +32,6 @@ $(function(){
                             'Device UUID: '     + device.uuid     + '<br />' +
                             'Device Version: '  + device.version  + '<br />');
 	});
-	document.addEventListener("menuButton",function(){
-		$("#footerMenu").fadeToggle(200);
-	});
 	$("#menuView").click(function(){
 		$.ajax("https://apis.daum.net/cafe/recent_articles/internet-media.json",{type:"GET"}).done(function(a){
 			$("#content").html("");
@@ -42,6 +39,9 @@ $(function(){
 		});
 	});
 })
+window.onload=function(){	document.addEventListener("menuButton",function(){
+		$("#footerMenu").fadeToggle(200);
+	});}
 </script>
 </head>
 <body>
