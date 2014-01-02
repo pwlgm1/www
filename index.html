@@ -13,9 +13,6 @@
 <script>
 $(function(){
 	bw=false;
-	$("#menuHome").click(function(){
-		location.href="http://kingdom0.cgimall.co.kr";
-	});
 	$("#menuCamera").click(function(){
 		navigator.camera.getPicture(function(imageData){
 			$("#content").append('<img style="width:80%;margin:0 auto;border:1px solid black;" src="data:image/jpeg;base64,' + imageData + '" />');
@@ -36,17 +33,14 @@ $(function(){
 </head>
 <body>
 <div data-role="page" id="mainActivity">
-	<div data-role="header">
-    	<h1>PWneo.com</h1>
-    </div><!--header end-->
     <div role="page" class="ui-content" id="content">
     </div>
     <div data-role="footer" data-position="fixed" id="footerMenu">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#" data-icon="home" data-iconpos="top" id="menuHome">Homepage</a></li>
-				<li><a href="#" data-icon="camera" data-iconpos="top" id="menuCamera">Camera</a></li>
-				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo">Video</a></li>
+				<li><a href="http://kingdom0.cgimall.co.kr" data-icon="home" data-iconpos="top" id="menuHome">링크</a></li>
+				<li><a href="#" data-icon="camera" data-iconpos="top" id="menuCamera">등록</a></li>
+				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo">기기정보</a></li>
 			</ul>
 		</div>
 	</div>
