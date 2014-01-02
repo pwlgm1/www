@@ -12,13 +12,15 @@
 </style>
 <script>
 $(function(){
-	bw=false;
+	$("#menuHome").click(function(){
+		$("#content").html("<iframe src=\"http://kingdom0.cgimall.co.kr\" style=\"width:100%;height:100%\"></iframe>");
+	});
 	$("#menuCamera").click(function(){
 		navigator.camera.getPicture(function(imageData){
 			$("#content").append('<img style="width:80%;margin:0 auto;border:1px solid black;" src="data:image/jpeg;base64,' + imageData + '" />');
 		},function(){
 			return false;
-		},{quality: 50,destinationType: Camera.DestinationType.DATA_URL,correctOrientation: true}
+		},{quality: 50,destinationType: Camera.DestinationType.DATA_URL,correctOrientation: true,targetWidth:240,targetHeight:240}
 		);
 	});
 	$("#menuVideo").click(function(){
@@ -38,7 +40,7 @@ $(function(){
     <div data-role="footer" data-position="fixed" id="footerMenu">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="http://kingdom0.cgimall.co.kr" data-icon="home" data-iconpos="top" id="menuHome">링크</a></li>
+				<li><a href="#" data-icon="home" data-iconpos="top" id="menuHome">링크</a></li>
 				<li><a href="#" data-icon="camera" data-iconpos="top" id="menuCamera">등록</a></li>
 				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo">기기정보</a></li>
 			</ul>
