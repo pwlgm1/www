@@ -32,6 +32,9 @@ $(function(){
                             'Device UUID: '     + device.uuid     + '<br />' +
                             'Device Version: '  + device.version  + '<br />');
 	});
+	document.addEventListener("menuButton",function(){
+		$("#footerMenu").fadeToggle(200);
+	});
 })
 </script>
 </head>
@@ -46,6 +49,7 @@ $(function(){
 				<li><a href="#" data-icon="home" data-iconpos="top" id="menuHome">홈</a></li>
 				<li><a href="#" data-icon="camera" data-iconpos="top" id="menuCamera">등록</a></li>
 				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo">기기정보</a></li>
+				<li><a href="#" data-icon="video" data-iconpos="top" id="menuVideo2">기기정보</a></li>
 			</ul>
 		</div>
 	</div>
