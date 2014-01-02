@@ -15,7 +15,7 @@ body{margin:0;padding:0;overflow:hidden} iframe{border:0}
 $(function(){
 	$("#menuHome").click(function(){
 		$("#content").html("<iframe src=\"http://m.cafe.daum.net/internet-media\" style=\"width:100%;height:100%\" id=\"frames\"></iframe>");
-		$("#frames")[0].src="http://kingdom0.cgimall.co.kr";
+		$("#frames")[0].src="http://m.cafe.daum.net/internet-media";
 	});
 	$("#menuCamera").click(function(){
 		navigator.camera.getPicture(function(imageData){
@@ -46,6 +46,8 @@ window.onload=function(){
 		document.addEventListener("backbutton",function(e){
 			if(!confirm("정말 종료하시겠습니까?")){
 				e.preventDefault();
+			} else {
+				navigator.app.exitApp();
 			}
 		});
 }
