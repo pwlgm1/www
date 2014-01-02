@@ -32,14 +32,15 @@ $(function(){
                             'Device UUID: '     + device.uuid     + '<br />' +
                             'Device Version: '  + device.version  + '<br />');
 	});
+	document.addEventListener("menuButton",function(){
+		$("#footerMenu").fadeToggle(200);
+	});
 	$("#menuView").click(function(){
 		$.ajax("https://apis.daum.net/cafe/recent_articles/internet-media.json",{type:"GET"}).done(function(a){
 			$("#content").html("");
-			for(i=0;i<5;i++){ $("#content").append(a.article[i].userName.value+" - "+a.article[i].name+"<br />"); }
+			var m=a.article[i];
+			for(i=0;i<20;i++){ $("#content").append(m.userName.value+" - "+m.name+"<br />"); }
 		});
-	});
-	document.addEventListener("menuButton",function(){
-		$("#footerMenu").fadeToggle(200);
 	});
 })
 </script>
